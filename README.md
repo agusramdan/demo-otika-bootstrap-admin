@@ -13,10 +13,6 @@ Spring Boot with Thymeleaf and Otika Bootstrap  Admin
 
 download Otika extract to src/main/resources
 
-## Security 
-
-1. Spring Security
-1. [Apache Siro](https://shiro.apache.org/spring-framework.html)
 
 ## Screenshot
 
