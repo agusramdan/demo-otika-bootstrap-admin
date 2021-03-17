@@ -1,0 +1,112 @@
+---
+## Configuring info endpoint
+info.app:
+  name: idm
+  description: ID Management
+  version: 2021.0.1
+
+eureka:   #<1>
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}    #needed to trigger info and endpoint update after restart
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+      management.server.port: ${management.server.port}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+---
+
+spring:
+  sleuth:
+    sampler:percentage: 1.0
+    web.skipPattern: "(^cleanup.*|.+favicon.*)"
+
+---
+spring:
+  application:
+    name: idm
+  profiles:
+    active:
+      - h2
+---
+logging:
+  file:
+    name: "/var/log/agusramdan/app.${spring.application.name}.${server.port}.log"
+  pattern:
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 100
+      total-size-cap: 2GB
+  level:
+    org.springframework.web: INFO
+    org.hibernate: ERROR
+
+---
+server:
+  port: 8080
+  error:
+    include-stacktrace: always
+
+management:
+  server.port: 7080
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  security:
+    enabled: false
+
+spring:
+  jmx:
+    enabled: true
+  main:
+    lazy-initialization: true
+
+---
+spring:
+  jpa:
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _hist
+            revision_field_name: rev
+            revision_type_field_name: revtype
+
+---
+spring:
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+
+---
+spring.thymeleaf.mode: LEGACYHTML5
+spring.thymeleaf.cache: false
+
+
+---
+
+spring.security.user.name: user@agus.com
+spring.security.user.password: password
+spring.security.user.roles: ADMIN
+
+
+---
+
+# Minio Host
+spring.minio.url: https://play.min.io
+  # Minio Bucket name for your application
+spring.minio.bucket: agusramdan-bucket
+  # Minio access key (login)
+spring.minio.access-key: Q3AM3UQ867SPQQA43P2F
+  # Minio secret key (password)
+spring.minio.secret-key: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG

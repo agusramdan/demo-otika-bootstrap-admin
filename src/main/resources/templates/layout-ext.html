@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+
+<!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Otika</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" th:href="@{/assets/css/app.min.css}">
+  <!-- Template CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/components.css}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
+  <link rel='shortcut icon' type='image/x-icon' th:href="@{/assets/img/favicon.ico}"/>
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <section class="section" layout:fragment="content">
+      <!-- content -->
+    </section>
+  </div>
+  <!-- General JS Scripts -->
+  <script th:src="@{/assets/js/app.min.js}"></script>
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script th:src="@{/assets/js/scripts.js}"></script>
+  <!-- Custom JS File -->
+  <script th:src="@{/assets/js/custom.js}"></script>
+
+  <div layout:fragment="footer-script" ></div>
+</body>
+
+
+<!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
+</html>

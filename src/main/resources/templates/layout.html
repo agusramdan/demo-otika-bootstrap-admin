@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<!-- index.html  21 Nov 2019 03:44:50 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Otika</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" th:href="@{/assets/css/app.min.css}">
+  <!-- Template CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/components.css}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
+  <link rel='shortcut icon' type='image/x-icon' th:href="@{/assets/img/favicon.ico}"/>
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky" th:replace="fragments/header :: header">
+       <!-- header -->
+      </nav>
+      <div class="main-sidebar sidebar-style-2" th:replace="fragments/mainsidebar :: sidebar">
+        <!-- sidebar -->
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section" layout:fragment="content">
+           <!-- main content -->
+        </section>
+        <div class="settingSidebar"  th:replace="fragments/settingsidebar :: setting-sidebar" >
+           <!-- setting-sidebar -->
+        </div>
+      </div>
+      <footer class="main-footer" th:replace="fragments/footer :: footer">
+        <!-- footer -->
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="assets/bundles/apexcharts/apexcharts.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/index.js"></script>
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
+  <div layout:fragment="footer-script" ></div>
+</body>
+<!-- index.html  21 Nov 2019 03:47:04 GMT -->
+</html>
