@@ -103,14 +103,14 @@
             </li>
             <li><a class="nav-link" th:href="@{/blank.html}"><i data-feather="file"></i><span>Blank Page</span></a></li>
             <li class="menu-header">Otika</li>
-            <li class="dropdown">
+            <li class="dropdown" id="menu_parent-forms">
                 <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Forms</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" th:href="@{/basic-form.html}">Basic Form</a></li>
-                    <li><a class="nav-link" th:href="@{/forms-advanced-form.html}">Advanced Form</a></li>
-                    <li><a class="nav-link" th:href="@{/forms-editor.html}">Editor</a></li>
-                    <li><a class="nav-link" th:href="@{/forms-validation.html}">Validation</a></li>
-                    <li><a class="nav-link" th:href="@{/form-wizard.html}">Form Wizard</a></li>
+                    <li id="menu_child-forms_basic_form"><a class="nav-link" th:href="@{/basic-form.html}">Basic Form</a></li>
+                    <li id="menu_child-forms_advanced_form"><a class="nav-link" th:href="@{/forms-advanced-form.html}">Advanced Form</a></li>
+                    <li id="menu_child-forms_editor"><a class="nav-link" th:href="@{/forms-editor.html}">Editor</a></li>
+                    <li id="menu_child-forms_validation"><a class="nav-link" th:href="@{/forms-validation.html}">Validation</a></li>
+                    <li id="menu_child-forms_wizard"><a class="nav-link" th:href="@{/form-wizard.html}">Form Wizard</a></li>
                 </ul>
             </li>
             <li class="dropdown">
