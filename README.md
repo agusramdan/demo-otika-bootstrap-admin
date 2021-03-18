@@ -13,6 +13,8 @@ Spring Boot with Thymeleaf and Otika Bootstrap  Admin
 
 download Otika extract to src/main/resources
 
+## Storage Service Using minio
+
 
 ## Screenshot
 

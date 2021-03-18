@@ -1,4 +1,4 @@
-package agusramdan.demo.otika.controller;
+package agusramdan.demo.otika.component;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

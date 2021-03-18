@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+
+
+<!-- export-table.html  21 Nov 2019 03:55:25 GMT -->
+<head>
+<!--  <meta charset="UTF-8">-->
+<!--  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">-->
+  <title>Users List</title>
+  <!-- General CSS Files -->
+<!--  <link rel="stylesheet" href="assets/css/app.min.css">-->
+  <!-- Template CSS -->
+  <link rel="stylesheet" th:href="@{/assets/bundles/datatables/datatables.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/components.css}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section" layout:fragment="content">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Users List</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                        <thead>
+                          <tr>
+                            <th>username</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Enabled</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr th:each="row : ${list}" >
+                            <td th:text="${row.id}"></td>
+                            <td th:text="${row.firstName}"></td>
+                            <td th:text="${row.lastName}"></td>
+                            <td>
+                              <div th:if="${row.enabled}" class="badge badge-success">Active</div>
+                              <div th:if="${!row.enabled}" class="badge badge-danger">Not Active</div>
+                            </td>
+                            <td><a th:href="${'edit/'+row.id}" class="btn btn-primary">Edit</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          <a href="templateshub.net">Templateshub</a></a>
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script th:src="@{/assets/js/app.min.js}"></script>
+  <div layout:fragment="page-script">
+    <!-- JS Libraies -->
+    <!-- Page Specific JS File -->
+    <script th:src="@{/assets/bundles/datatables/datatables.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/dataTables.buttons.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/buttons.flash.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/jszip.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/pdfmake.min.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/vfs_fonts.js}"></script>
+    <script th:src="@{/assets/bundles/datatables/export-tables/buttons.print.min.js}"></script>
+    <script th:src="@{/assets/js/page/datatables.js}"></script>
+
+  </div>
+  <!-- Template JS File -->
+  <script th:src="@{/assets/js/scripts.js}"></script>
+  <!-- Custom JS File -->
+  <script th:src="@{/assets/js/custom.js}"></script>
+  <div layout:fragment="footer-script">
+    <script>
+      // menu
+      // side bar menu active
+      $("#menu_parent-idm").addClass(function (){return "active";});
+      $("#menu_child-idm_users").addClass( function (){return "active";});
+    </script>
+  </div>
+
+</body>
+
+
+<!-- export-table.html  21 Nov 2019 03:56:01 GMT -->
+</html>

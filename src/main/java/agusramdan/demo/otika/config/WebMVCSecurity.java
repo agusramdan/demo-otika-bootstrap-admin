@@ -65,14 +65,14 @@ public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
                 "/assets/**","/h2-console","/h2-console/**"
-                ,"/forgot-password.html","/register.html");
+                ,"/forgot-password.html","/forgot-password"
+                ,"/register.html","/register");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/actuator", "/actuator/**", "/info/**"
-                        ).permitAll()
+                .antMatchers("/actuator", "/actuator/**", "/info/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -82,8 +82,7 @@ public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .httpBasic(Customizer.withDefaults()) // <4>
-                .csrf((csrf) -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // <5>
-                )
+                .csrf((csrf) -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())) // <5>
                 .rememberMe((rememberMe) -> rememberMe.key(UUID.randomUUID().toString()).tokenValiditySeconds(1209600))
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

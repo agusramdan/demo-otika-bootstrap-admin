@@ -8,8 +8,10 @@ CREATE TABLE roles
 
 create table users(
     username varchar_ignorecase(50) not null primary key,
-    password varchar_ignorecase(50) not null,
-    enabled boolean not null
+    password varchar_ignorecase(100) not null,
+    enabled boolean not null,
+    first_name varchar(50),
+    last_name varchar(50)
 );
 
 create table authorities (
@@ -130,9 +132,9 @@ VALUES
 ;
 
 INSERT INTO users
-(enabled,username              ,password )
+(enabled,username              ,password     , first_name,last_name)
 VALUES
-(true  , 'user@ramdan.com'   ,'{noop}rahasia')
+(true  , 'user@ramdan.com'   ,'{noop}rahasia', 'Agus'    ,'Ramdan')
 ;
 
 

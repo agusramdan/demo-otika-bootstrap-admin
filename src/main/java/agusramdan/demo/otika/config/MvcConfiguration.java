@@ -15,12 +15,16 @@ public class MvcConfiguration implements WebMvcConfigurer {
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
+
         registry.addViewController("/index").setViewName("index");
-        registry.addViewController("/index.html").setViewName("index");
-        registry.addViewController("/login*").setViewName("login");
-        registry.addViewController("/register.html").setViewName("register");
-        registry.addViewController("/forgot-password.html").setViewName("forgot-password");
+        registry.addViewController("/login").setViewName("login");
+        registry.addRedirectViewController("/","/index");
+        registry.addRedirectViewController("/index.html","/index");
+        registry.addRedirectViewController("/register.html","/register");
+        registry.addRedirectViewController("/forgot-password.html","/forgot-password");
+
+        // otika
+        registry.addViewController("/export-table.html").setViewName("otika/export-table");
     }
 
 }

@@ -1,4 +1,4 @@
-package agusramdan.demo.otika.controller;
+package agusramdan.demo.otika.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,8 @@ public class GeneralExceptionHandler {
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public @ResponseBody ErrorMessage handleException(NotFoundException e) {
+    public @ResponseBody
+    ErrorMessage handleException(NotFoundException e) {
         String id = e.getMessage();
         return new ErrorMessage("Trooper Not Found: "+ id +", why aren't you at your post? "+ id +", do you copy?");
     }

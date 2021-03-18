@@ -25,10 +25,10 @@ public class FilesController {
     private MinioService minioService;
 
 
-    @GetMapping("/")
-    public List testMinio() throws MinioException {
-        return minioService.list();
-    }
+    // @GetMapping("/")
+    // public List testMinio() throws MinioException {
+    //     return minioService.list();
+    // }
 
     @GetMapping("/{object}")
     public void getObject(@PathVariable("object") String object, HttpServletResponse response) throws MinioException, IOException {
