@@ -4,6 +4,9 @@ spring:
     enabled: false
   main:
     lazy-initialization: true
+  h2:
+    console:
+      enabled: false
 
 eureka:
   client:
