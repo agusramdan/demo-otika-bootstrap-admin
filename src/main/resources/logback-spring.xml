@@ -46,7 +46,7 @@
             <appender-ref ref="GELF" />
         </logger>
     </springProfile>
-    <springProfile name="h2,heroku">
+    <springProfile name="h2,heroku,postgres">
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
         </root>
