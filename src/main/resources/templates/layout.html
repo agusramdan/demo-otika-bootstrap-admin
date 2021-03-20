@@ -22,7 +22,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/components.css}">
    </th:block>
 
-  <th:block layout:fragment="head-links-template-css">
+  <th:block layout:fragment="head-links-custom-css">
     <!-- Custom style  CSS --><!-- from layout -->
     <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
   </th:block>
@@ -45,7 +45,7 @@
         <section class="section" layout:fragment="content">
            <!-- main content -->
         </section>
-        <div class="settingSidebar"  th:replace="fragments/layout :: setting-sidebar" >
+        <div class="settingSidebar"  th:replace="~{fragments/layout :: setting-sidebar}" >
            <!-- setting-sidebar -->
         </div>
       </div>
@@ -62,7 +62,6 @@
 
   <th:block layout:fragment="libraies-script"  >
     <!-- JS Libraies --> <!-- from layout -->
-    <script th:src="@{/assets/bundles/apexcharts/apexcharts.min.js}"></script>
   </th:block>
 
   <th:block layout:fragment="page-script" >
