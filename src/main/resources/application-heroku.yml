@@ -34,9 +34,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
-#        dialect: org.hibernate.dialect.MySQL8Dialect
-    database: mysql
-    database-platform: postgres
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    database-platform: POSTGRESQL
   flyway:
     enabled: true
     check-location: true
