@@ -128,20 +128,24 @@ create table revinfo (
 INSERT INTO roles
 (authority, description)
 VALUES
-('ROLE_ADMIN'  ,'Administrator')
+('ROLE_ADMIN'  ,'Administrator'),
+('ROLE_USER'  ,'User')
 ;
 
 INSERT INTO users
 (enabled,username              ,password     , first_name,last_name)
 VALUES
-(true  , 'user@ramdan.com'   ,'{noop}rahasia', 'Agus'    ,'Ramdan')
+(true  , 'admin@ramdan.com'   ,'{noop}rahasia', 'Agus'    ,'Ramdan'),
+(true  , 'user@ramdan.com'    ,'{noop}rahasia', 'Agus'    ,'Ramdan')
 ;
 
 
 INSERT INTO authorities
 (authority     ,username)
 VALUES
-('ROLE_ADMIN'  ,'user@ramdan.com')
+('ROLE_ADMIN'  ,'admin@ramdan.com'),
+('ROLE_USER'  ,'user@ramdan.com')
+
 ;
 
 

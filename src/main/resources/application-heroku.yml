@@ -17,26 +17,30 @@ logging:
 #  level.org.hibernate: TRACE
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+#    username: sa
+#    password:
+    driver-class-name: org.postgresql.Driver
+    maxActive: 10
+    maxIdle: 5
+    minIdle: 2
+    initialSize: 5
+    removeAbandoned: true
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: none
+    platform: postgres
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
+#        dialect: org.hibernate.dialect.MySQL8Dialect
     database: mysql
-    database-platform: MYSQL
+    database-platform: postgres
   flyway:
     enabled: true
     check-location: true
-    locations:
-      - classpath:/db/migration/mysql
-      - classpath:/db/migration/testdata
+    locations: classpath:/db/migration/postgres
   # Templates reloading during development
   thymeleaf:
     cache: false
@@ -45,8 +49,8 @@ spring:
     enabled: true
     encoding: UTF-8
     mode: HTML
-    #    prefix: classpath:/templates/
-    prefix: file:src/main/resources/templates/
+    prefix: classpath:/templates/
+    #prefix: file:src/main/resources/templates/
     #    prefix: ${project.basedir}/src/main/resources/templates/
     suffix: .html
     # excluded-view-names:
@@ -64,7 +68,8 @@ spring:
         - "static/**"
         - "public/**"
   resources:
-    static-locations: file:src/main/resources/static/
+    static-locations: classpath:/static/
+
 
     cache:
       period: 0
@@ -76,6 +81,7 @@ spring:
       location: ${java.io.tmpdir}
   session:
     store-type: none
+
 
 #We can use the httpOnly and secure flags to secure our session cookie:
 #
