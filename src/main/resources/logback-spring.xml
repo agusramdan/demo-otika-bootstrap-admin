@@ -2,7 +2,7 @@
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
-    <springProfile name="!h2">
+    <springProfile name="graylog">
         <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
                 <pattern>%green(%date) %highlight(%-5level) %yellow([%-4relative]) %magenta([%thread]) %cyan(%logger{10}) %gray([%file:%line]) %blue(: %msg%n)</pattern>
@@ -46,7 +46,7 @@
             <appender-ref ref="GELF" />
         </logger>
     </springProfile>
-    <springProfile name="h2">
+    <springProfile name="h2,heroku">
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
         </root>
