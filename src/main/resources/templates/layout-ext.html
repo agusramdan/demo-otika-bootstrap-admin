@@ -8,16 +8,26 @@
 
 <!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
 <head>
+<th:block layout:fragment="head-meta"  >
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+</th:block>
   <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Otika</title>
-  <!-- General CSS Files -->
+<th:block layout:fragment="head-links-general-css"  >
+  <!-- General CSS Files --><!-- from layout -->
   <link rel="stylesheet" th:href="@{/assets/css/app.min.css}">
-  <!-- Template CSS -->
+</th:block>
+
+<th:block layout:fragment="head-links-template-css">
+  <!-- Template CSS --><!-- from layout -->
   <link rel="stylesheet" th:href="@{/assets/css/style.css}">
   <link rel="stylesheet" th:href="@{/assets/css/components.css}">
-  <!-- Custom style CSS -->
+</th:block>
+
+<th:block layout:fragment="head-links-template-css">
+  <!-- Custom style  CSS --><!-- from layout -->
   <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
+</th:block>
   <link rel='shortcut icon' type='image/x-icon' th:href="@{/assets/img/favicon.ico}"/>
 </head>
 
@@ -28,16 +38,29 @@
       <!-- content -->
     </section>
   </div>
-  <!-- General JS Scripts -->
-  <script th:src="@{/assets/js/app.min.js}"></script>
-  <!-- JS Libraies -->
-  <!-- Page Specific JS File -->
-  <!-- Template JS File -->
-<!--  <script th:src="@{/assets/js/scripts.js}"></script>-->
-<!--  &lt;!&ndash; Custom JS File &ndash;&gt;-->
-<!--  <script th:src="@{/assets/js/custom.js}"></script>-->
+  <th:block layout:fragment="general-script"  >
+    <!-- General JS Scripts --><!-- from layout -->
+    <script th:src="@{/assets/js/app.min.js}"></script>
+  </th:block>
 
-  <div layout:fragment="footer-script" ></div>
+  <th:block layout:fragment="libraies-script"  >
+    <!-- JS Libraies --> <!-- from layout -->
+  </th:block>
+
+  <th:block layout:fragment="page-script" >
+    <!-- Page Specific JS File --><!-- from layout -->
+  </th:block>
+
+  <th:block layout:fragment="template-script" >
+    <!-- Template JS File --><!-- from layout -->
+    <script th:src="@{/assets/js/scripts.js}"></script>
+  </th:block>
+
+  <th:block layout:fragment="custom-script" >
+    <!-- Custom JS File --><!-- from layout -->
+    <script th:src="@{/assets/js/custom.js}"></script>
+  </th:block>
+  <th:block layout:fragment="footer-script" ></th:block>
 </body>
 
 

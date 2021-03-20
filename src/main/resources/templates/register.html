@@ -2,8 +2,20 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout-ext">
+<!-- auth-register.html  21 Nov 2019 04:05:01 GMT -->
 <head>
-  <title>Register</title>
+  <meta th:remove="tag" charset="UTF-8">
+  <meta th:remove="tag" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Otika - Admin Dashboard Template</title>
+  <!-- General CSS Files -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/app.min.css">
+  <link th:remove="tag" rel="stylesheet" href="assets/bundles/jquery-selectric/selectric.css">
+  <!-- Template CSS -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/style.css">
+  <link th:remove="tag" rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/custom.css">
+  <link th:remove="tag" rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
 
 <body>
@@ -73,19 +85,28 @@
     </section>
   </div>
   <!-- General JS Scripts -->
-<!--  <script src="assets/js/app.min.js"></script>-->
-  <div layout:fragment="footer-script">
+  <script th:remove="tag" src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script th:remove="tag" src="assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script th:remove="tag" src="assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script th:remove="tag"  src="assets/js/page/auth-register.js"></script>
+  <!-- Template JS File -->
+  <script th:remove="tag" src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script th:remove="tag" src="assets/js/custom.js"></script>
+
+<th:block layout:fragment="libraies-script"  >
   <!-- JS Libraies -->
   <script src="assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js"></script>
   <script src="assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+</th:block>
+<th:block layout:fragment="page-script" >
   <!-- Page Specific JS File -->
   <script src="assets/js/page/auth-register.js"></script>
-  <!-- Template JS File -->
-  <script src="assets/js/scripts.js"></script>
-  <!-- Custom JS File -->
-  <script src="assets/js/custom.js"></script>
-  </div>
+</th:block>
 </body>
+
 
 <!-- auth-register.html  21 Nov 2019 04:05:02 GMT -->
 </html>

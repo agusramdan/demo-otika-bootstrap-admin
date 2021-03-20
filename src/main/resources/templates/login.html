@@ -4,7 +4,18 @@
 
 <!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
 <head>
+  <meta th:remove="tag" charset="UTF-8">
+  <meta th:remove="tag" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Login</title>
+  <!-- General CSS Files -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/app.min.css">
+  <link th:remove="tag" rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
+  <!-- Template CSS -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/style.css">
+  <link th:remove="tag" rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link th:remove="tag" rel="stylesheet" href="assets/css/custom.css">
+  <link th:remove="tag" rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
 
 <body>
@@ -19,10 +30,7 @@
                 <h4>Login</h4>
               </div>
               <div class="card-body">
-                <form method="POST" th:action="@{/login}" class="needs-validation" novalidate="" >
-                  <input type="hidden"
-                         th:name="${_csrf.parameterName}"
-                         th:value="${_csrf.token}" />
+                <form method="POST" action="#" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="username" tabindex="1" required autofocus>
@@ -34,7 +42,7 @@
                     <div class="d-block">
                       <label for="password" class="control-label">Password</label>
                       <div class="float-right">
-                        <a href="auth-forgot-password.html" class="text-small">
+                        <a id="forgot-password" href="auth-forgot-password.html" class="text-small">
                           Forgot Password?
                         </a>
                       </div>
@@ -74,8 +82,9 @@
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              Don't have an account? <a th:href="@{/register.html}">Create One</a>
+              Don't have an account? <a id="register" href="auth-register.html">Create One</a>
             </div>
+            <div id="error"></div>
           </div>
         </div>
       </div>
@@ -83,17 +92,13 @@
   </div>
   <!-- General JS Scripts -->
   <script src="assets/js/app.min.js"></script>
-  <div layout:fragment="footer-script">
-    <!-- JS Libraies -->
-    <!-- Page Specific JS File -->
-    <!-- Template JS File -->
-    <script src="assets/js/scripts.js"></script>
-    <!-- Custom JS File -->
-    <script src="assets/js/custom.js"></script>
-  </div>
-
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
 </body>
-
 
 <!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
 </html>

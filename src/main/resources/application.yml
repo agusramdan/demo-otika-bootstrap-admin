@@ -89,10 +89,11 @@ spring:
       config: classpath:ehcache.xml
 
 ---
-spring.thymeleaf.mode: LEGACYHTML5
-spring.thymeleaf.cache: false
-
-
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    decoupled-logic: true
 ---
 
 spring.security.user.name: user@agus.com

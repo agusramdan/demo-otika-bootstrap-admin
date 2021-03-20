@@ -76,7 +76,7 @@ public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .failureUrl("/login?error")
+                .failureUrl("/login-error.html")
                 .loginPage("/login")
                 .defaultSuccessUrl("/index")
                 .permitAll()

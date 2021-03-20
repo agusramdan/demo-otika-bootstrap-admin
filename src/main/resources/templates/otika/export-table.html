@@ -8,21 +8,29 @@
 
 <!-- export-table.html  21 Nov 2019 03:55:25 GMT -->
 <head>
-<!--  <meta charset="UTF-8">-->
-<!--  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">-->
+  <meta th:remove="tag" charset="UTF-8">
+  <meta th:remove="tag" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Export Table</title>
   <!-- General CSS Files -->
-<!--  <link rel="stylesheet" href="assets/css/app.min.css">-->
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
-  <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-<!--  <link rel="stylesheet" href="assets/css/style.css">-->
-<!--  <link rel="stylesheet" href="assets/css/components.css">-->
-<!--  &lt;!&ndash; Custom style CSS &ndash;&gt;-->
-<!--  <link rel="stylesheet" href="assets/css/custom.css">-->
-<!--  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />-->
-</head>
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/app.min.css" id="hapus">
 
+  <!-- Template CSS -->
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/bundles/datatables/datatables.min.css" >
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/style.css">
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/custom.css">
+  <link th:remove="tag" rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+<th:block layout:fragment="head-links-template-css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css" >
+  <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+</th:block>
+<th:block layout:fragment="head-links-custom-css">
+  <!-- Custom style CSS -->
+</th:block>
 <body>
   <div class="loader"></div>
   <div id="app">
@@ -518,18 +526,23 @@
           </div>
         </section>
       </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          <a href="templateshub.net">Templateshub</a></a>
-        </div>
-        <div class="footer-right">
-        </div>
-      </footer>
     </div>
   </div>
   <!-- General JS Scripts -->
-  <script src="assets/js/app.min.js"></script>
-  <div layout:fragment="page-script">
+  <script th:remove="tag" src="../../static/assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/datatables.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/jszip.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/pdfmake.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/vfs_fonts.js"></script>
+  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
+  <script th:remove="tag" src="../../static/assets/js/page/datatables.js"></script>
+
+  <th:block layout:fragment="page-script">
     <!-- JS Libraies -->
     <!-- Page Specific JS File -->
     <script src="assets/bundles/datatables/datatables.min.js"></script>
@@ -542,12 +555,12 @@
     <script src="assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
     <script src="assets/js/page/datatables.js"></script>
 
-  </div>
+  </th:block>
   <!-- Template JS File -->
-  <script src="assets/js/scripts.js"></script>
+  <script th:remove="tag" src="../../static/assets/js/scripts.js"></script>
   <!-- Custom JS File -->
-  <script src="assets/js/custom.js"></script>
-  <div layout:fragment="footer-script">
+  <script th:remove="tag" src="../../static/assets/js/custom.js"></script>
+  <th:block layout:fragment="footer-script">
     <script>
       // menu
       // side bar menu active
@@ -556,7 +569,7 @@
       //$("#menu-header_widgets").addClass( function (){return "active";});
       //$("#menu_chart-widgets").addClass( function (){return "active";});
     </script>
-  </div>
+  </th:block>
 
 </body>
 

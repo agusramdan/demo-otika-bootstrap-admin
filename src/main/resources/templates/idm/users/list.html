@@ -50,16 +50,28 @@
                             <th>Action</th>
                           </tr>
                         </thead>
-                        <tbody >
-                          <tr th:each="row : ${list}" >
-                            <td th:text="${row.id}"></td>
-                            <td th:text="${row.firstName}"></td>
-                            <td th:text="${row.lastName}"></td>
-                            <td>
-                              <div th:if="${row.enabled}" class="badge badge-success">Active</div>
-                              <div th:if="${!row.enabled}" class="badge badge-danger">Not Active</div>
+                        <tbody id="listData">
+                          <tr>
+                            <td class="row_username">agus.ramdan@gmail.com</td>
+                            <td class="row_firstName">Agus</td>
+                            <td class="row_lastName">Ramdan</td>
+                            <td class="row_enabled">
+                              <div class="badge">Not Active</div>
                             </td>
-                            <td><a th:href="${'edit/'+row.id}" class="btn btn-primary">Edit</a></td>
+                            <td class="row_action">
+                              <a href="#" class="btn btn-primary">Edit</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="row_username">abdul.rahman@gmail.com</td>
+                            <td class="row_firstName">Abdul</td>
+                            <td class="row_lastName">Rahman</td>
+                            <td class="row_enabled">
+                              <div class="badge">Not Active</div>
+                            </td>
+                            <td class="row_action">
+                              <a href="#" class="btn btn-primary">Edit</a>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -71,13 +83,6 @@
           </div>
         </section>
       </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          <a href="templateshub.net">Templateshub</a></a>
-        </div>
-        <div class="footer-right">
-        </div>
-      </footer>
     </div>
   </div>
   <!-- General JS Scripts -->

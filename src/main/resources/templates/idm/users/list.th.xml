@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<thlogic>
+    <attr sel="#listData" th:remove="all-but-first">
+        <attr sel="/tr[0]" th:each="row : ${list}">
+            <attr sel="td.row_username" th:text="${row.id}" />
+            <attr sel="td.row_firstName" th:text="${row.firstName}" />
+            <attr sel="td.row_lastName" th:text="${row.lastName}" />
+            <attr sel="td.row_enabled/div.badge"
+                  th:classappend="${row.enabled ? 'badge-success' : 'badge-danger'}"
+                  th:text="${row.enabled ? 'Active' : 'Not Active'}"
+            />
+            <attr sel="td.row_action/a" th:href="${'edit/'+row.id}"/>
+        </attr>
+    </attr>
+</thlogic>
+

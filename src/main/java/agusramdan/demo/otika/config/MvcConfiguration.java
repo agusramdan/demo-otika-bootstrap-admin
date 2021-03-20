@@ -9,19 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer {
 
-    @Bean
-    public LayoutDialect layoutDialect() {
-        return new LayoutDialect();
-    }
+
 
     public void addViewControllers(ViewControllerRegistry registry) {
 
         registry.addViewController("/index").setViewName("otika/index");
-        registry.addViewController("/login").setViewName("login");
+//        registry.addViewController("/login").setViewName("login");
+//        registry.addViewController("/forgot").setViewName("login");
         registry.addRedirectViewController("/","/index");
         registry.addRedirectViewController("/index.html","/index");
         registry.addRedirectViewController("/register.html","/register");
-        registry.addRedirectViewController("/forgot-password.html","/forgot-password");
 
         // Otika
         // Forms

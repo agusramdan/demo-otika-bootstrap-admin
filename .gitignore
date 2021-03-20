@@ -140,3 +140,4 @@ target/
 *.pid
 *.port
 
+src/main/resources/templates/assets
