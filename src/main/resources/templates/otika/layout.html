@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<!-- blank.html  21 Nov 2019 03:54:41 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Otika</title>
+  <!-- General CSS Files --><!-- from layout -->
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <th:block layout:fragment="head-links-css"/>
+  <!-- Template CSS --><!-- from layout -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style  CSS --><!-- from layout -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href="assets/img/favicon.ico"/>
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky" th:replace="otika/fragments-layout :: header">
+       <!-- header -->
+      </nav>
+      <div class="main-sidebar sidebar-style-2" th:replace="otika/fragments-layout :: sidebar">
+        <!-- sidebar -->
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section" layout:fragment="content">
+           <!-- main content -->
+        </section>
+        <div class="settingSidebar"  th:replace="~{otika/fragments-layout :: setting-sidebar}" >
+           <!-- setting-sidebar -->
+        </div>
+      </div>
+      <footer class="main-footer" th:replace="~{otika/fragments-layout :: footer}">
+        <div class="footer-left">
+          <a href="templateshub.net">Templateshub</a></a>
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts --><!-- from layout -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <th:block layout:fragment="libraies-script"/>
+  <!-- Page Specific JS File -->
+  <th:block layout:fragment="page-script" />
+  <!-- Template JS File --><!-- from layout -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File --><!-- from layout -->
+  <script src="assets/js/custom.js"></script>
+  <th:block layout:fragment="footer-script" />
+</body>
+
+
+<!-- blank.html  21 Nov 2019 03:54:41 GMT -->
+</html>

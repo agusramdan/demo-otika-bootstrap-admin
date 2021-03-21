@@ -3,33 +3,29 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout">
+      layout:decorate="otika/layout">
 
 
 <!-- export-table.html  21 Nov 2019 03:55:25 GMT -->
 <head>
-  <meta th:remove="tag" charset="UTF-8">
-  <meta th:remove="tag" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Export Table</title>
   <!-- General CSS Files -->
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/app.min.css" id="hapus">
-
+  <link rel="stylesheet" href="assets/css/app.min.css">
   <!-- Template CSS -->
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/bundles/datatables/datatables.min.css" >
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/style.css">
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/components.css">
+  <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
   <!-- Custom style CSS -->
-  <link th:remove="tag" rel="stylesheet" href="../../static/assets/css/custom.css">
-  <link th:remove="tag" rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
-<th:block layout:fragment="head-links-template-css">
+<th:block layout:fragment="head-links-css" id="head-links-css">
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css" >
   <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-</th:block>
-<th:block layout:fragment="head-links-custom-css">
-  <!-- Custom style CSS -->
 </th:block>
 <body>
   <div class="loader"></div>
@@ -529,38 +525,31 @@
     </div>
   </div>
   <!-- General JS Scripts -->
-  <script th:remove="tag" src="../../static/assets/js/app.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
   <!-- JS Libraies -->
-  <!-- Page Specific JS File -->
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/datatables.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/jszip.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/pdfmake.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/vfs_fonts.js"></script>
-  <script th:remove="tag" src="../../static/assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
-  <script th:remove="tag" src="../../static/assets/js/page/datatables.js"></script>
 
+  <th:block layout:fragment="libraies-script" id="libraies-script">
+  <script src="assets/bundles/datatables/datatables.min.js"></script>
+  <script src="assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
+  <script src="assets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
+  <script src="assets/bundles/datatables/export-tables/jszip.min.js"></script>
+  <script src="assets/bundles/datatables/export-tables/pdfmake.min.js"></script>
+  <script src="assets/bundles/datatables/export-tables/vfs_fonts.js"></script>
+  <script src="assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
+  </th:block>
+  <!-- Page Specific JS File -->
   <th:block layout:fragment="page-script">
-    <!-- JS Libraies -->
-    <!-- Page Specific JS File -->
-    <script th:src="@{/assets/bundles/datatables/datatables.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/dataTables.buttons.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/buttons.flash.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/jszip.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/pdfmake.min.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/vfs_fonts.js}"></script>
-    <script th:src="@{/assets/bundles/datatables/export-tables/buttons.print.min.js}"></script>
-    <script th:src="@{/assets/js/page/datatables.js}"></script>
+  <script src="assets/js/page/datatables.js"></script>
   </th:block>
   <!-- Template JS File -->
-  <script th:remove="tag" src="../../static/assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
   <!-- Custom JS File -->
-  <script th:remove="tag" src="../../static/assets/js/custom.js"></script>
-  <th:block layout:fragment="footer-script">
-    <script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+<th:block layout:fragment="footer-script">
+  <script>
       // menu
       // side bar menu active
       $("#menu-header_dashboard").addClass(function (){return "active";});
@@ -568,10 +557,7 @@
       //$("#menu-header_widgets").addClass( function (){return "active";});
       //$("#menu_chart-widgets").addClass( function (){return "active";});
     </script>
-  </th:block>
-
-</body>
-
+</th:block>
 
 <!-- export-table.html  21 Nov 2019 03:56:01 GMT -->
 </html>

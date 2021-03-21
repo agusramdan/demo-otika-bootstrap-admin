@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<thlogic>
+
+    <attr sel="img.header-logo" th:src="@{/assets/img/logo.png}"/>
+    <!-- notification -->
+<!--    <attr sel="li.mail-header" th:remove="all"/>-->
+
+    <attr sel=".mail-unread-count" th:text="9"/>
+    <!-- notification -->
+<!--    <attr sel="li.notification-header" th:remove="all"/>-->
+
+    <!-- image profile-header  -->
+    <attr sel="img.user-img-radious-style" th:src="@{/assets/img/user.png}"/>
+    <attr sel="a.link-profile" th:href="@{/profile.html}" />
+    <attr sel="a.link-settings" th:href="@{/settings}" />
+    <attr sel="a.link-timeline" th:href="@{/timeline.html}" />
+    <attr sel="a.link-logout" th:href="@{/logout}" />
+    <attr sel="a.link-index"  th:href="@{/index}" />
+
+</thlogic>

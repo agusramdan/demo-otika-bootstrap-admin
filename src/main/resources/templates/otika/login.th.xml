@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<thlogic>
+    <attr sel="head">
+        <attr sel="meta" th:remove="all" />
+        <attr sel="link" th:remove="all" />
+    </attr>
+    <attr sel="#head-links-css">
+        <attr sel="link" th:attrprepend="href=@{/}"/>
+    </attr>
+    <attr sel="#libraies-script">
+        <attr sel="script" th:attrprepend="src=@{/}"/>
+    </attr>
+    <attr sel="#page-script">
+        <attr sel="script" th:attrprepend="src=@{/}"/>
+    </attr>
+    <attr sel="form"
+          role="form"
+          method="POST"
+          th:action="@{/login}"
+          >
+    </attr>
+
+    <attr sel="#errors" th:if="${loginError}" text="Login error"/>
+    <attr sel="#forgot-password" th:href="@{/forgot-password}"/>
+    <attr sel="#register" th:href="@{/register}"/>
+
+</thlogic>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thlogic>
+    <attr sel="link" th:attrprepend="href=@{/}"/>
+    <attr sel="script" th:attrprepend="src=@{/}"/>
+</thlogic>

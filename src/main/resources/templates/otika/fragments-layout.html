@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
+<!-- blank.html  21 Nov 2019 03:54:41 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Home</title>
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <!-- Custom style CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'/>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Otika - Admin Dashboard Template</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
 
 <body>
-<div class="loader"></div>
-<div id="app">
+  <div class="loader"></div>
+  <div id="app">
     <div class="main-wrapper main-wrapper-1">
-    <div class="navbar-bg"></div>
-    <nav class="navbar navbar-expand-lg main-navbar sticky" th:fragment="header">
+        <div class="navbar-bg"></div>
+        <nav class="navbar navbar-expand-lg main-navbar sticky" th:fragment="header">
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
@@ -41,10 +43,11 @@
           </ul>
         </div>
         <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-              class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
-              <span class="badge headerBadge1">
-                6 </span> </a>
+          <li class="dropdown dropdown-list-toggle mail-header ">
+              <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">
+                  <i data-feather="mail"></i>
+                  <span class="badge headerBadge1 mail-unread-count" > 6 </span>
+              </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
               <div class="dropdown-header">
                 Messages
@@ -53,14 +56,17 @@
                 </div>
               </div>
               <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">John
-                      Deo</span>
-                    <span class="time messege-text">Please check your mail !!</span>
-                    <span class="time">2 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                <a href="#" class="dropdown-item">
+                    <span class="dropdown-item-avatar text-white">
+                        <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
+                    </span>
+                    <span class="dropdown-item-desc">
+                        <span class="message-user">John Deo</span>
+                        <span class="time messege-text">Please check your mail !!</span>
+                        <span class="time">2 Min Ago</span>
+                    </span>
+                </a>
+                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
                     <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                       Smith</span> <span class="time messege-text">Request for leave
@@ -102,8 +108,9 @@
               </div>
             </div>
           </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-              class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
+          <li class="dropdown dropdown-list-toggle notification-header">
+              <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
+                  <i data-feather="bell" class="bell"></i>
             </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
               <div class="dropdown-header">
@@ -120,58 +127,59 @@
                     available now! <span class="time">2 Min
                       Ago</span>
                   </span>
-                        </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i
-                            class="far
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="far
 												fa-user"></i>
                   </span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
                       Sugiharto</b> are now friends <span class="time">10 Hours
                       Ago</span>
                   </span>
-                    </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-success text-white"> <i
-                            class="fas
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-success text-white"> <i
+                      class="fas
 												fa-check"></i>
                   </span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
                     moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
                       Hours
                       Ago</span>
                   </span>
-                    </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-danger text-white"> <i
-                            class="fas fa-exclamation-triangle"></i>
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-danger text-white"> <i
+                      class="fas fa-exclamation-triangle"></i>
                   </span> <span class="dropdown-item-desc"> Low disk space. Let's
                     clean it! <span class="time">17 Hours Ago</span>
                   </span>
-                    </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i
-                            class="fas
-												fa-bell"></i>
-                  </span> <span class="dropdown-item-desc"> Welcome to Otika
-                    template! <span class="time">Yesterday</span>
+                </a>
+                  <a href="#" class="dropdown-item">
+                      <span class="dropdown-item-icon bg-info text-white">
+                          <i class="fas fa-bell"></i>
+                      </span>
+                      <span class="dropdown-item-desc">
+                          Welcome to Otika template!
+                          <span class="time">Yesterday</span>
                   </span>
-                    </a>
-                    </div>
-                    <div class="dropdown-footer text-center">
-                        <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                    </div>
+              </a>
+              </div>
+                <div class="dropdown-footer text-center">
+                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" data-toggle="dropdown"
-                                    class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                    <img alt="image"
-                                                                                                     src="assets/img/user.png"
-                                                                                                     class="user-img-radious-style">
+            </div>
+          </li>
+            <li class="dropdown profile-header">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                    <img alt="image" src="assets/img/user.png" class="user-img-radious-style">
                 <span class="d-sm-none d-lg-inline-block"></span></a>
                 <div class="dropdown-menu dropdown-menu-right pullDown">
                     <div class="dropdown-title">Hello Sarah Smith</div>
-                    <a href="profile.html" class="dropdown-item has-icon"> <i class="far
-										fa-user"></i> Profile
-                    </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
-                    Activities
-                </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
-                    Settings
-                </a>
+                    <a href="profile.html" class="link-profile dropdown-item has-icon">
+                        <i class="far fa-user"></i> Profile
+                    </a>
+                    <a href="timeline.html" class="link-timeline dropdown-item has-icon">
+                        <i class="fas fa-bolt"></i>Activities
+                    </a>
+                    <a href="#" class="link-settings dropdown-item has-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
                     <div class="dropdown-divider"></div>
-                    <a th:href="@{/logout}" class="dropdown-item has-icon text-danger"> <i
-                            class="fas fa-sign-out-alt"></i>
+                    <a href="logout" class="link-logout dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i>
                         Logout
                     </a>
                 </div>
@@ -182,15 +190,15 @@
     <div class="main-sidebar sidebar-style-2" th:fragment="sidebar">
         <aside id="sidebar-wrapper">
             <div class="sidebar-brand">
-                <a th:href="@{/index.html}"> <img alt="image" th:src="@{/assets/img/logo.png}" class="header-logo"/>
-                    <span
-                            class="logo-name">Otika</span>
+                <a th:href="@{/index.html}" class="link-index">
+                    <img alt="image" src="assets/img/logo.png" class="header-logo"/>
+                    <span class="logo-name">Otika</span>
                 </a>
             </div>
             <ul class="sidebar-menu">
                 <li class="menu-header">Main</li>
                 <li class="dropdown" id="menu-header_dashboard">
-                    <a th:href="@{/index.html}" class="nav-link"><i
+                    <a href="index.html" class="link-index nav-link"><i
                             data-feather="monitor"></i><span>Dashboard</span></a>
                 </li>
 
@@ -221,7 +229,7 @@
                         <li><a class="nav-link" th:href="@{/email-read.html}">read</a></li>
                     </ul>
                 </li>
-                <li class="menu-header">Security</li>
+                <li class="menu-header" id="menu_modul-security" >Security</li>
                 <li class="dropdown" id="menu_parent-idm">
                     <a href="#" class="menu-toggle nav-link has-dropdown"><i
                             data-feather="users"></i><span>IDM</span></a>
@@ -525,10 +533,9 @@
         </div>
         <footer class="main-footer" th:fragment="footer">
             <div class="footer-left">
-                <a href="templateshub.net">Templateshub</a></a>
+                <a href="https://github.com/agusramdan/demo-otika-bootstrap-admin">Spring Boot - Otika Template</a>
             </div>
             <div class="footer-right">
-                <span>Copyright &copy; Your Website 2020</span>
             </div>
         </footer>
     </div>
