@@ -1,86 +1,21 @@
-# otika-demo
+# demo-otika-bootstrap-admin-template
 
 ![CI](https://github.com/agusramdan/demo-otika-bootstrap-admin/actions/workflows/main.yml/badge.svg)
 
 
 Spring Boot with Thymeleaf and Otika bootstrap Admin 
 
-# otika-demo
+# Notes : demo-otika-bootstrap-admin-template
 
-Spring Boot with Thymeleaf and Otika Bootstrap  Admin 
 
-## Installation
+Source template form https://www.templateshub.net/template/otika-bootstrap-admin-template  
+[Current demo](https://demo-otika.herokuapp.com/login)
 
-download Otika extract to src/main/resources
-
-## Storage Service Using minio
-
+Credential
+admin@ramdan.com/secret
+user@ramdan.com/secret
 
 ## Screenshot
 
 ![Dashboard](docs/dashboard.png)
 
-
-## Convert Layout
-
-
-~~~sh
-
-$> cd src/main/resources/static
-$> cp index.html ../templates/
-$> cd ../templates/ 
-$> cp index.html layout.html
-
-~~~
-
-
-
-~~~
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
->
-
-~~~
-
-setup layout
-
-Setup layout using index.html
-~~~
-        <!-- Sidebar -->
-        <div th:replace="fragments/mainsidebar :: sidebar"></div>
-
-~~~
-
-page
-~~~
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout">
-
-~~~
-
-layout.html main contetn
-
-~~~
-
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="section" layout:fragment="content">
-           <!-- main content -->
-        </section>
-        <div class="settingSidebar">
-        
-        
-~~~
-
-index.html main content
-~~~
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="section" layout:fragment="content">
-
-~~~

@@ -139,5 +139,5 @@ target/
 *.iml
 *.pid
 *.port
-
+src/main/resources/templates/assets
 src/main/resources/templates/otika/assets

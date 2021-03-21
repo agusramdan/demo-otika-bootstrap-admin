@@ -57,19 +57,19 @@ public class UnAunthController {
     // Login form
     @GetMapping(value = {"/login","/login.html"})
     public String login() {
-        return "login";
+        return "otika/login";
     }
 
     // Login form with error
     @GetMapping("/login-error.html")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "login";
+        return "otika/login";
     }
 
     @GetMapping(value = {"/forgot-password","/forgot-password.html"})
     public String forgetPassword() {
-        return "forgot-password";
+        return "otika/forgot-password";
     }
 
     @PostMapping(value = "/forgot-password")
@@ -82,6 +82,6 @@ public class UnAunthController {
         }
 
 
-        return "forgot-password";
+        return "otika/forgot-password";
     }
 }
