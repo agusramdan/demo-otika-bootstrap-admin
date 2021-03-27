@@ -45,7 +45,7 @@ spring:
     enabled: true
     encoding: UTF-8
     mode: HTML
-    #    prefix: classpath:/templates/
+    #prefix: classpath:/templates/
     prefix: file:src/main/resources/templates/
     #    prefix: ${project.basedir}/src/main/resources/templates/
     suffix: .html

@@ -9,9 +9,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.MimeType;
+import org.thymeleaf.spring5.ISpringWebFluxTemplateEngine;
 import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.SpringWebFluxTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import org.thymeleaf.spring5.view.reactive.ThymeleafReactiveViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
@@ -20,10 +23,10 @@ import java.util.LinkedHashMap;
 @Configuration
 public class ThymeleafConfig {
 
-    @Bean
-    public LayoutDialect layoutDialect() {
-        return new LayoutDialect();
-    }
+//    @Bean
+//    public LayoutDialect layoutDialect() {
+//        return new LayoutDialect();
+//    }
 
     @Bean
     public ITemplateResolver thymeleafTemplateResolver(
@@ -48,5 +51,9 @@ public class ThymeleafConfig {
 
         return resolver;
     }
+
+
+
+
 
 }

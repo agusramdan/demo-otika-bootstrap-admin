@@ -19,12 +19,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Arrays;
 
 @Controller
-@RequestMapping()
 @AllArgsConstructor
 public class UnAunthController {
 
-    JdbcUserDetailsManager jdbcUserDetailsManager;
-    PasswordEncoder passwordEncoder;
+    //JdbcUserDetailsManager jdbcUserDetailsManager;
+    //PasswordEncoder passwordEncoder;
+
+    @GetMapping(value = {"/index.html","/index","/"})
+    public String index() {
+
+        return "otika/index";
+    }
+
     @GetMapping(value = {"/forgot-password-email.html","/forgot-password-email"})
     public ModelMap forgotPasswordEmail(String pageName) {
 
@@ -39,19 +45,19 @@ public class UnAunthController {
         return "register";
     }
 
-    @PostMapping(value = "/register")
-    public String register(RegisterDto register, Model model) {
-
-        if(!jdbcUserDetailsManager.userExists(register.getEmail())){
-
-            val user = new User(register.getEmail(),passwordEncoder.encode(register.getPassword()),
-                    Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
-            jdbcUserDetailsManager.createUser(user);
-        }
-        model.addAttribute("register", register);
-
-        return "register";
-    }
+//    @PostMapping(value = "/register")
+//    public String register(RegisterDto register, Model model) {
+//
+//        if(!jdbcUserDetailsManager.userExists(register.getEmail())){
+//
+//            val user = new User(register.getEmail(),passwordEncoder.encode(register.getPassword()),
+//                    Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+//            jdbcUserDetailsManager.createUser(user);
+//        }
+//        model.addAttribute("register", register);
+//
+//        return "register";
+//    }
 
 
     // Login form
@@ -72,16 +78,16 @@ public class UnAunthController {
         return "otika/forgot-password";
     }
 
-    @PostMapping(value = "/forgot-password")
-    public String register(@RequestParam String email, Model model) {
-
-        if(jdbcUserDetailsManager.userExists(email)){
-            model.addAttribute("success", "Send request to email "+email);
-        }else {
-            model.addAttribute("errors", "User not found");
-        }
-
-
-        return "otika/forgot-password";
-    }
+//    @PostMapping(value = "/forgot-password")
+//    public String register(@RequestParam String email, Model model) {
+//
+//        if(jdbcUserDetailsManager.userExists(email)){
+//            model.addAttribute("success", "Send request to email "+email);
+//        }else {
+//            model.addAttribute("errors", "User not found");
+//        }
+//
+//
+//        return "otika/forgot-password";
+//    }
 }

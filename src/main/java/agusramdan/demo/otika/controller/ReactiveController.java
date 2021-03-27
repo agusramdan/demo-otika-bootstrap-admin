@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.thymeleaf.spring5.context.webflux.IReactiveDataDriverContextVariable;
+import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable;
 
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
-import java.util.Optional;
 
 
-public abstract class CRUDController<T extends BaseDomain<ID>, ID extends Serializable> {
+public abstract class ReactiveController<T extends BaseDomain<ID>, ID extends Serializable> {
 
     protected String domainName = "domain";
     protected String page="menu/sub_menu";
@@ -53,7 +53,9 @@ public abstract class CRUDController<T extends BaseDomain<ID>, ID extends Serial
 
     @GetMapping(value = "/list")
     public String list(Model model) {
-        model.addAttribute("list", getRepository().findAll());
+        IReactiveDataDriverContextVariable reactiveDataDrivenMode =
+                new ReactiveDataDriverContextVariable(getRepository().findAll(), 10);
+        model.addAttribute("list", reactiveDataDrivenMode);
         return pageList;
     }
 
