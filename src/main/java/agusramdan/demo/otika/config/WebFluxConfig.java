@@ -7,17 +7,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.config.EnableWebFlux;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.ViewResolverRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
-import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.RouterFunctions;
-import org.springframework.web.reactive.function.server.ServerResponse;
+import org.springframework.web.reactive.function.server.*;
 import org.thymeleaf.spring5.ISpringWebFluxTemplateEngine;
 import org.thymeleaf.spring5.SpringWebFluxTemplateEngine;
 import org.thymeleaf.spring5.view.reactive.ThymeleafReactiveViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
+import reactor.core.publisher.Mono;
+
+import java.util.Collections;
+import java.util.Map;
 
 @Configuration
 @EnableWebFlux
@@ -51,6 +54,17 @@ public class WebFluxConfig implements WebFluxConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.viewResolver(thymeleafReactiveViewResolver());
+    }
+    @Bean
+    public RouterFunction<ServerResponse> indexRouter() {
+        log.info(">>>initializing index.html router bean >>>");
+        return RouterFunctions.route(RequestPredicates.GET("/index.html").and(RequestPredicates.accept(MediaType.TEXT_PLAIN))
+                , this::index);
+    }
+
+    public  Mono<ServerResponse> index(final ServerRequest request) {
+        final Map<String,Object> model = Collections.singletonMap("salute", "Hello world from WebFlux.fn");
+        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("otika/index", model);
     }
 
     @Bean
