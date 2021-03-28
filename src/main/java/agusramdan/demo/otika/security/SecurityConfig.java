@@ -53,9 +53,9 @@ public class SecurityConfig {
                         "/actuator", "/actuator/**", "/info/**","/login").permitAll()
                 .matchers(
                         PathRequest.toStaticResources().atCommonLocations()
-
                 )
                 .permitAll()
+                .pathMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
                 .anyExchange().authenticated()
                 .and()
                 .csrf().disable()
