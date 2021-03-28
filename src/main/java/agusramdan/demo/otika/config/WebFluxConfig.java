@@ -61,7 +61,7 @@ public class WebFluxConfig implements WebFluxConfigurer {
 
     @Bean
     public RouterFunction<ServerResponse> htmlRouter() {
-        log.info(">>>initializing images router bean >>>");
+        log.info(">>>initializing html router bean >>>");
         return RouterFunctions.resources("/*.html", new ClassPathResource("/static/"));
     }
 

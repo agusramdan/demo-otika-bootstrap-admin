@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <thlogic>
     <attr sel="head">
-        <attr sel="meta" th:remove="all" />
-        <attr sel="link" th:remove="all" />
+        <attr sel="meta" data-th-remove="all" />
+        <attr sel="link" data-th-remove="all" />
     </attr>
 <!--    <attr sel="#head-links-css">-->
-<!--        <attr sel="link" th:attrprepend="href=@{/}"/>-->
+<!--        <attr sel="link" data-th-attrprepend="href=@{/}"/>-->
 <!--    </attr>-->
 <!--    <attr sel="#libraies-script">-->
-<!--        <attr sel="script" th:attrprepend="src=@{/}"/>-->
+<!--        <attr sel="script" data-th-attrprepend="src=@{/}"/>-->
 <!--    </attr>-->
 <!--    <attr sel="#page-script">-->
-<!--        <attr sel="script" th:attrprepend="src=@{/}"/>-->
+<!--        <attr sel="script" data-th-attrprepend="src=@{/}"/>-->
 <!--    </attr>-->
-    <attr sel="#listData" th:remove="all-but-first">
-        <attr sel="/tr[0]" th:each="row : ${list}">
-            <attr sel="td.row_username" th:text="${row.id}" />
-            <attr sel="td.row_firstName" th:text="${row.firstName}" />
-            <attr sel="td.row_lastName" th:text="${row.lastName}" />
+    <attr sel="#listData" data-th-remove="all-but-first">
+        <attr sel="/tr[0]" data-th-each="row : ${list}">
+            <attr sel="td.row_username" data-th-text="${row.id}" />
+            <attr sel="td.row_firstName" data-th-text="${row.firstName}" />
+            <attr sel="td.row_lastName" data-th-text="${row.lastName}" />
             <attr sel="td.row_enabled/div.badge"
-                  th:classappend="${row.enabled ? 'badge-success' : 'badge-danger'}"
-                  th:text="${row.enabled ? 'Active' : 'Not Active'}"
+                  data-th-classappend="${row.enabled ? 'badge-success' : 'badge-danger'}"
+                  data-th-text="${row.enabled ? 'Active' : 'Not Active'}"
             />
-            <attr sel="td.row_action/a" th:href="${'edit/'+row.id}"/>
+            <attr sel="td.row_action/a" data-th-href="${'edit/'+row.id}"/>
         </attr>
     </attr>
 </thlogic>

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="otika/layout">
+<html lang="en" data-layout-decorator="otika/layout">
 
 
 <!-- export-table.html  21 Nov 2019 03:55:25 GMT -->
@@ -22,9 +18,9 @@
   <link  rel="stylesheet" href="../../assets/css/custom.css">
   <link  rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
 </head>
-<th:block layout:fragment="head-links-css" id="head-links-css">
-  <link rel="stylesheet" th:href="@{/assets/bundles/datatables/datatables.min.css}">
-  <link rel="stylesheet" th:href="@{/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css}">
+<th:block data-layout-fragment="head-links-css" id="head-links-css">
+  <link rel="stylesheet" data-th-href="@{/assets/bundles/datatables/datatables.min.css}">
+  <link rel="stylesheet" data-th-href="@{/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css}">
 </th:block>
 <body>
   <div class="loader"></div>
@@ -33,7 +29,7 @@
 
       <!-- Main Content -->
       <div class="main-content">
-        <section class="section" layout:fragment="content">
+        <section class="section" data-layout-fragment="content">
           <div class="section-body">
             <div class="row">
               <div class="col-12">
@@ -92,7 +88,7 @@
   <script src="../../assets/js/app.min.js"></script>
   <!-- JS Libraies -->
 
-  <th:block layout:fragment="libraies-script" id="libraies-script">
+  <th:block data-layout-fragment="libraies-script" id="libraies-script">
     <script src="../../assets/bundles/datatables/datatables.min.js"></script>
     <script src="../../assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
@@ -103,14 +99,14 @@
     <script src="../../assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
   </th:block>
   <!-- Page Specific JS File -->
-  <th:block layout:fragment="page-script" id="page-script">
+  <th:block data-layout-fragment="page-script" id="page-script">
     <script src="../../assets/js/page/datatables.js"></script>
   </th:block>
   <!-- Template JS File -->
   <script src="../../assets/js/scripts.js"></script>
   <!-- Custom JS File -->
   <script src="../../assets/js/custom.js"></script>
-  <th:block layout:fragment="footer-script">
+  <th:block data-layout-fragment="footer-script">
     <script>
       // menu
       // side bar menu active

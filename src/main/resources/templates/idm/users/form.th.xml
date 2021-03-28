@@ -3,11 +3,11 @@
     <attr sel="#domainData"
           method="post"
           role="form"
-          th:object="${domain}"
-          th:action="@{/idm/users/save}" >
-        <attr sel="#username" th:field="*{id}" />
-        <attr sel="#firstName" th:field="*{firstName}" />
-        <attr sel="#lastName" th:field="*{lastName}" />
-        <attr sel="#enabled" th:field="*{enabled}" />
+          data-th-object="${domain}"
+          data-th-action="@{/idm/users/save}" >
+        <attr sel="#username" data-th-field="*{id}" />
+        <attr sel="#firstName" data-th-field="*{firstName}" />
+        <attr sel="#lastName" data-th-field="*{lastName}" />
+        <attr sel="#enabled" data-th-field="*{enabled}" />
     </attr>
 </thlogic>

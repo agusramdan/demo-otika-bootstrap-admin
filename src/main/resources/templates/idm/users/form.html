@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout">
+<html lang="en" data-layout-decorator="otika/layout">
 
 
 <!-- forms-validation.html  21 Nov 2019 03:55:16 GMT -->
@@ -18,7 +15,7 @@
 
       <!-- Main Content -->
       <div class="main-content">
-        <section class="section" layout:fragment="content">
+        <section class="section" data-layout-fragment="content">
           <div class="section-body">
             <div class="row">
               <div class="col-12">
@@ -62,14 +59,14 @@
       </div>
     </div>
   </div>
-  <div layout:fragment="page-script">
+  <div data-layout-fragment="page-script">
     <!-- Page level plugins -->
-    <script th:src="@{/assets/js/page/index.js}"></script>
+    <script data-th-src="@{/assets/js/page/index.js}"></script>
 
     <!-- Page level custom scripts -->
-    <script th:src="@{/assets/js/custom.js}"></script>
+    <script data-th-src="@{/assets/js/custom.js}"></script>
   </div>
-  <div layout:fragment="footer-script">
+  <div data-layout-fragment="footer-script">
     <script>
       // menu
       // side bar menu active
